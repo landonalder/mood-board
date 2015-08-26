@@ -57,7 +57,14 @@ $(function () {
   });
 
   // Append the draggable widget to all the img objects
-  $("img").draggable({
+  var current_user_image_query;
+  if($("#user").text()) {
+    current_user_image_query = "img#" + $("#user").text();
+  } else {
+    current_user_image_query = "img";
+  }
+
+  $(current_user_image_query).draggable({
     containment: "#board",
     // Capture the "stop drag" event
     stop:function (event, ui) {

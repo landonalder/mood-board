@@ -1,1 +1,1 @@
-Rails.application.config.assets.precompile += %w( board.css )
+Rails.application.config.assets.precompile += %w( board.css board.js )

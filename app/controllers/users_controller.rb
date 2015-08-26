@@ -25,9 +25,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = User.friendly.find(params[:slug])
-
-    redirect_to(edit_user_path(user))
+    @user = User.friendly.find(params[:slug])
   end
 
   def index

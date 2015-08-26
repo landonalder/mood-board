@@ -5,14 +5,24 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= stylesheet_link_tag    'board', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'board' %>
   <%= csrf_meta_tags %>
   <meta http-equiv='refresh' content='300'>
 </head>
 <body>
+<div id="user" style="display: none;"><%= current_user.slug %></div>
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, content_tag(:strong, msg), class: 'alert alert-danger' %>
+<% end -%>
 
 <ul class="nav nav-tabs">
   <li role="presentation" class="active"><%= link_to('Board', moods_path) %></li>
   <li role="presentation"><%= link_to('Users', users_path) %></li>
+  <% if user_signed_in? %>
+    <li><%= link_to("Log Out", destroy_user_session_path, :method => :delete) %></li>
+  <% else %>
+    <li><%= link_to('Log In', new_user_session_path)  %></li>
+  <% end %>
 </ul>
 
 <div class="container-fluid">

@@ -4,5 +4,15 @@
   "repository": "https://github.com/landonalder/mood-board",
   "scripts": {
     "postdeploy": "bundle exec rake db:migrate"
+  },
+  "env": {
+    "fresh": {
+      "description": "The number of hours old a mood can be to still be considered fresh.",
+      "value": "3"
+    },
+    "old": {
+      "description": "The number of hours before a mood is considered to be old.",
+      "value": "12"
+    }
   }
 }
