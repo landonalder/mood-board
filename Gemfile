@@ -15,9 +15,9 @@ gem 'friendly_id'
 gem 'bootstrap-sass'
 gem 'devise', '~> 3.5.1'
 gem 'devise_ldap_authenticatable', '~> 0.8.5'
+gem 'sqlite3'
 
 group :development do
-  gem 'sqlite3'
   gem 'spring'
   gem 'pry'
   gem 'pry-rails'
@@ -25,7 +25,6 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 
