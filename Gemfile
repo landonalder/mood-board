@@ -14,7 +14,6 @@ gem 'gravatar-ultimate'
 gem 'friendly_id'
 gem 'bootstrap-sass'
 gem 'devise', '~> 3.5.1'
-gem 'devise_ldap_authenticatable', '~> 0.8.5'
 
 group :development do
   gem 'spring'
