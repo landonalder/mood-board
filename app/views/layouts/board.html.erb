@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mood</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag    'board', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <meta http-equiv='refresh' content='300'>
+</head>
+<body>
+
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><%= link_to('Board', moods_path) %></li>
+  <li role="presentation"><%= link_to('Users', users_path) %></li>
+</ul>
+
+<div class="container-fluid">
+  <div class="row">
+    <div id="board" class="col-md-8">
+      <%= yield %>
+    </div>
+    <div class="col-md-2">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Color Key</h3>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <h4><span class="label green">Updated in the last <%= ENV['fresh'] %> hours</span></h4>
+          </li>
+          <li class="list-group-item">
+            <h4><span class="label orange">Updated in the last <%= ENV['old'] %> hours</span></h4>
+          </li>
+          <li class="list-group-item">
+            <h4><span class="label red">Updated over <%= ENV['old'] %> hours ago</span></h4>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
