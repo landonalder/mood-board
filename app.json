@@ -2,4 +2,7 @@
   "name": "Mood board",
   "description": "A mood board with statuses to help teams communicate their mood.",
   "repository": "https://github.com/landonalder/mood-board"
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  }
 }
